@@ -1,55 +1,81 @@
 <template>
-        <section id="team">
-        <h2>Tiendas</h2>
-        <section class="container col-12">
-            <article class="card card-1">
-                <img src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png" alt="logo-20180910-114107">
+  <div >
+    <section id="team" class="container-fluid row">
+      <h2>Tiendas</h2>
+      <section
+        v-for="item in productos"
+        :key="item._id"
+        class="container col-12"
+      >
+        <article class="card card-1  row">
+          <img
+            src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png"
+            alt="logo-20180910-114107"
+          />
 
-                <p>Nombre: <strong> Veg Deal </strong> </p>
-                <p>Dirección: <strong> Carrera 85 Norte </strong> </p>
-                <p class="ultima">Teléfono: <strong> +57 400789236 </strong> </p>
-                <a href="">
-                    <button>ir</button>
-                </a>
-            </article>
-            <article class="card card-2">
-                <img src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png" alt="logo-20180910-114107">
-
-                <p>Nombre: <strong> Veg Deal </strong></p>
-                <p>Dirección: <strong> Carrera 85 Norte </strong></p>
-                <p class="ultima">Teléfono: <strong> +57 400789236 </strong></p>
-                <a href="">
-                    <button>ir</button>
-                </a>
-            </article>
-            <article class="card card-3">
-                <img src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png" alt="logo-20180910-114107">
-
-                <p>Nombre: <strong> Veg Deal </strong></p>
-                <p>Dirección: <strong> Carrera 85 Norte </strong></p>
-                <p class="ultima">Teléfono: <strong> +57 400789236 </strong></p>
-                <a href="">
-                    <button>ir</button>
-                </a>
-            </article>
-            <article class="card card-4">
-                <img src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png" alt="logo-20180910-114107">
-
-                <p>Nombre: <strong> Veg Deal </strong></p>
-                <p>Dirección: <strong> Carrera 85 Norte </strong></p>
-                <p class="ultima">Teléfono: <strong> +57 400789236 </strong></p>
-                <a href="">
-                    <button>ir</button>
-                </a>
-            </article>
-        </section>
+          <p>
+            <strong>Nombre: </strong> {{ item.nombre_tienda }} 
+          </p>
+          <p>
+            Teléfono: <strong>{{ item.telefono_tienda }} </strong>
+          </p>
+          <p class="ultima">
+            E-mail <strong> {{ item.email_tienda }} </strong>
+          </p>
+        </article>
+      </section>
     </section>
+  </div>
 </template>
 <script>
+import store from "../store/index.js";
 
+export default {
+  data() {
+    return {};
+  },
+
+  methods: {
+    eliminarProductos(id) {
+      let obj = { id };
+      store.dispatch("deleteProductos", obj).then(() => {
+        store.dispatch("getProductos");
+      });
+    },
+
+    insertarProductos() {
+      let obj = {
+        nombre_tienda: this.form.nombre_tienda,
+        telefono_tienda: this.form.telefono_tienda,
+        email_tienda: this.form.email_tienda,
+        tipo_producto: this.form.tipo_producto,
+        nombre_producto: this.form.nombre_producto,
+        precio_kg: this.form.precio_kg,
+        url_img: this.form.url_img,
+      };
+
+      console.log("producto -->", obj);
+      store.dispatch("insertProductos", obj).then(() => {
+        store.dispatch("getProductos");
+      });
+    },
+  },
+
+  created: () => {
+    //accede a las acciones del store
+    store.dispatch("getProductos");
+  },
+
+  computed: {
+    productos: () => {
+      return store.state.productos;
+    },
+  },
+};
 </script>
+
 <style>
-    :root {
+:root {
   --green: #2f7a2c;
   --backgroud: #faf7ef;
   --yellow: #f4a94d;
@@ -75,7 +101,7 @@ h2 {
   color: var(--hueso);
   width: 200px;
   height: 50px;
-  
+
   background: var(--amarillo);
   margin: 0 auto;
   margin-top: 50px;
@@ -89,7 +115,7 @@ h2 {
 
 #team .container {
   display: flex;
-  flex-wrap: inherit; 
+  flex-wrap: inherit;
   justify-content: center;
   position: relative;
 }

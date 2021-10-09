@@ -57,7 +57,7 @@ export default {
         tipo_producto: this.form.tipo_producto,
         nombre_producto: this.form.nombre_producto,
         precio_kg: this.form.precio_kg,
-        url_img: this.url_img,
+        url_img: this.form.url_img,
       };
 
       console.log("producto -->", obj);

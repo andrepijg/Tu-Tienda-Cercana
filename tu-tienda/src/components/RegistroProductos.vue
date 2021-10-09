@@ -157,7 +157,7 @@ export default {
         tipo_producto: null,
         nombre_producto: null,
         precio_kg: null,
-        url_image: null,
+        url_img: null,
       },
       tipo_producto: [
         { text: "Seleccione uno", value: null },

@@ -4,6 +4,7 @@ import Inicio from '../views/Home.vue'
 import Blog from '../views/Blog.vue'
 import ProductosInt from '../views/Productos.vue'
 import RegistroProductos from '../views/RegistroProductos.vue'
+import Tiendas from '../views/Tiendas'
 
 
 Vue.use(VueRouter)
@@ -31,6 +32,12 @@ const routes = [
     path: '/registro-productos',
     name: 'registro',
     component: RegistroProductos
+  },
+
+  {
+    path: '/tiendas',
+    name: 'tiendas',
+    component: Tiendas
   },
 
       
