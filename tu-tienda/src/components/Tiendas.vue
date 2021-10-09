@@ -1,30 +1,35 @@
 <template>
-  <div >
-    <section id="team" class="container-fluid row">
+
+  <div class="container mt-500 mb-400 text-center">
+    <div class="mb-3 mt-500 mb-100">
+      <hr>
+      <hr>
+    <section id="team" >
       <h2>Tiendas</h2>
       <section
         v-for="item in productos"
         :key="item._id"
-        class="container col-12"
+        class="container row col-12"
       >
-        <article class="card card-1  row">
+        <article class="card card-1">
           <img
             src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png"
             alt="logo-20180910-114107"
           />
 
           <p>
-            <strong>Nombre: </strong> {{ item.nombre_tienda }} 
+            <strong>Nombre: </strong><br>{{ item.nombre_tienda }} 
           </p>
           <p>
-            Teléfono: <strong>{{ item.telefono_tienda }} </strong>
+            <strong>Teléfono:</strong><br> {{ item.telefono_tienda }} 
           </p>
           <p class="ultima">
-            E-mail <strong> {{ item.email_tienda }} </strong>
+            <strong>E-mail: </strong><br> {{ item.email_tienda }} 
           </p>
         </article>
       </section>
     </section>
+  </div>
   </div>
 </template>
 <script>
@@ -74,7 +79,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 :root {
   --green: #2f7a2c;
   --backgroud: #faf7ef;
@@ -118,6 +123,7 @@ h2 {
   flex-wrap: inherit;
   justify-content: center;
   position: relative;
+  flex-direction: row;
 }
 
 #team .container .card {
@@ -134,12 +140,13 @@ h2 {
 
 #team .container .card img {
   width: 80px;
-  height: 60px;
+  height:80px;
   border-radius: 20px;
   display: flex;
   justify-self: center;
   align-self: center;
   background-color: var(--green);
+  
 }
 
 #team .container .card p {

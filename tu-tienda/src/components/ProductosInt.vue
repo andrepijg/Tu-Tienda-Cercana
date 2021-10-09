@@ -1,5 +1,10 @@
 <template>
-  <div id="cards" class="container-fluid row mt-200 mb-3">
+  <div id="cards" class="container-fluid row mt-200px mb-3">
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
     <b-card
       deck
       v-for="item in productos"
@@ -23,11 +28,6 @@
       </b-list-group>
       <b-card-body>
         <h4>$ {{ item.precio_kg }}</h4>
-      </b-card-body>
-
-      <b-card-body>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
       </b-card-body>
     </b-card>
   </div>

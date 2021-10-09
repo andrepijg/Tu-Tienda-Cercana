@@ -90,10 +90,9 @@
             required
           ></b-form-select>
         </b-form-group>
-          
         </b-form-group>
-
-        <b-button
+          
+          <b-button
           v-on:click="insertarProductos()"
           variant="success"
           class="btn my-10"
@@ -103,7 +102,7 @@
     </b-card>
 
     <!-- Tabla con los registros generados luego del registro -->
-    <div class="container-fluid col-9">
+    <div class="container-fluid col-10">
       <table class="table">
         <thead>
           <tr>
@@ -123,18 +122,18 @@
             <td>{{ item.email_tienda }}</td>
             <td>{{ item.tipo_producto }}</td>
             <td>{{ item.nombre_producto }}</td>
-            <td>{{ item.precio_kg }}</td>
+            <td>$ {{ item.precio_kg }}</td>
             <td>
               <b-button
                 @click="eliminarProductos(item._id)"
-                color="error"
+                variant="danger"
                 rounded
                 small
               >
                 Borrar
               </b-button>
 
-              <b-button color="error" rounded small> Cambiar </b-button>
+              <b-button variant="primary" rounded small> Cambiar </b-button>
             </td>
           </tr>
         </tbody>
@@ -177,6 +176,7 @@ export default {
         "Manzana Roja",
         "Pechuga",
         "Pepino",
+        "Piña",
         "Sobrebarriga",
         "Tomate",
         "Zanahoria",
@@ -185,9 +185,21 @@ export default {
 
       url_img: [
         { text: "Seleccione uno", value: null },
-        "https://res.cloudinary.com/dgjrfgl2e/image/upload/v1633629061/Tu%20Tienda%20Cercana/PRODUCTOS/AJO_w9zziu.jpg",
-
-      ],
+        "https://bit.ly/Ajo_",
+        "https://bit.ly/Banano_",
+        "https://bit.ly/Coco_coco",
+        "https://bit.ly/Kiwi_Kiwi",
+        "https://bit.ly/Lomo_res",
+        "https://bit.ly/Mango_oneco",
+        "https://bit.ly/Manzana_Roja",
+        "https://bit.ly/Naranja_Naranja",
+        "https://bit.ly/Pechuga_",
+        "https://bit.ly/Pepino_",
+        "https://bit.ly/Piña_",
+        "https://bit.ly/Sobrebarriga_",
+        "https://bit.ly/Tomate_Tomate",
+        "https://bit.ly/Zanahoria_",        
+            ],
       show: true,
     };
   },
@@ -208,7 +220,7 @@ export default {
         tipo_producto: this.form.tipo_producto,
         nombre_producto: this.form.nombre_producto,
         precio_kg: this.form.precio_kg,
-        url_img: this.form.url_img
+        url_img: this.form.url_img,
       };
 
       console.log("producto -->", obj);
