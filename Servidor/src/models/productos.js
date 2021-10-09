@@ -9,7 +9,7 @@ var productoSchema = new Schema({
     tipo_producto: { type: String, required: [true, 'Tipo de producto obligatorio'] },
     nombre_producto: { type: String, required: [true, 'Nombre Producto obligatorio'] },
     precio_kg: { type: Number, required: [true, 'Precio Producto obligatorio'] },
-    urlImg: String,
+    url_img: String,
     usuarioId: String,
 
 },

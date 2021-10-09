@@ -18,8 +18,8 @@ class ServerController {
 
     
     update(req, res) {
-        let { id, nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg} = req.body;
-        let obj = {nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg  }
+        let { id, nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img} = req.body;
+        let obj = {nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img,}
         productos.findByIdAndUpdate(id, { $set: obj }, (error, data) => {
             if (error) {
                 res.status(500).send();

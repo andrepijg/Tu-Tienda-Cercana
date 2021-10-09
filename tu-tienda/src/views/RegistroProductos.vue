@@ -1,15 +1,20 @@
 <template>
-    <registro-productos />
+<div>
+<navbar/>
+<registro-productos />
+</div>
+
 </template>
 
 
 <script>
-import RegistroProductos from '../components/RegistroProductos.vue'
+
+import RegistroProductos from "../components/RegistroProductos.vue";
+import Navbar from "../components/Navbar.vue"
+
 
 export default {
-        components:
-        {RegistroProductos},
-}
-    
-    </script>
+  components: { RegistroProductos, Navbar},
+};
+</script>
 

@@ -28,17 +28,18 @@ export default new Vuex.Store({
         },
         body: JSON.stringify(productos)
       });
-    }
+    },
+    async insertProductos({commit}, productos){
+      const peticion = await fetch('http://localhost:3000/productos', {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(productos)
+      });
   },
 
-  async insertProductos({commit}, productos){
-    const peticion = await fetch('http://localhost:3000/productos', {
-      method: 'POST',
-      headers: {
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(productos)
-    });
+  
   },
 
 

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Inicio from '../views/Home.vue'
 import Blog from '../views/Blog.vue'
-import Productos_Int from '../views/Productos.vue'
+import ProductosInt from '../views/Productos.vue'
 import RegistroProductos from '../views/RegistroProductos.vue'
 
 
@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/productos-lista',
     name: 'Productos',
-    component: Productos_Int
+    component: ProductosInt
   },
 
   {

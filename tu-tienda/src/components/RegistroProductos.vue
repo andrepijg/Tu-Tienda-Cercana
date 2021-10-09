@@ -1,138 +1,145 @@
 <template>
-<div>
-  <b-card class="container-fluid col-4">
-
-    <b-form @submit="insertarProductos()" v-if="show">
-      <h2>REGISTRO PRODUCTOS</h2>
-      <b-form-group
-        id="input-group-1"
-        label="Nombre Tienda:"
-        label-for="input-1"
-      >s
-        <b-form-input
-          id="input-1"
-          v-model="form.nombre_tienda"
-          type="nombre_tienda"
-          placeholder="Ingresar nombre de la Tienda"
-          required
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-2" label="Telefono:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="form.telefono_tienda"
-          type="number"
-          placeholder="Ingresar Teléfono"
-          required
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-3" label="E-mail:" label-for="input-3">
-        <b-form-input
-          id="input-3"
-          v-model="form.email_tienda"
-          type="email"
-          placeholder="Ingresar email"
-          required
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group
-        id="input-group-4"
-        label="Tipo Producto:"
-        label-for="input-4"
+  <div>
+    <b-card class="container-fluid col-4">
+      <b-form v-if="show">
+        <h2>REGISTRO PRODUCTOS</h2>
+        <b-form-group
+          id="input-group-1"
+          label="Nombre Tienda:"
+          label-for="input-1"
         >
-        <b-form-select
-          id="input-4"
-          v-model="form.tipo_producto"
-          :options="tipo_producto"
-          required
-        ></b-form-select>
-      </b-form-group>
-
-      <b-form-group
-        id="input-group-5"
-        label="Nombre Producto:"
-        label-for="input-5"
-      >
-        <b-form-select
-          id="input-5"
-          v-model="form.nombre_producto"
-          :options="nombre_producto"
-          required
-        ></b-form-select>
-      </b-form-group>
-
-      <b-form-group
-        id="input-group-7"
-        label="Precio por Kilo"
-        label-for="input-7"
-      >
-        <b-input-group prepend="$">
           <b-form-input
-            id="input-7"
-            v-model="form.precio_kg"
-            type="number"
-            placeholder="Ingresar precio Kg"
+            id="input-1"
+            v-model="form.nombre_tienda"
+            placeholder="Ingresar nombre de la Tienda"
             required
-          >
-          </b-form-input>
-        </b-input-group>
-      </b-form-group>
+          ></b-form-input>
+        </b-form-group>
 
-      <b-button type="submit" variant="success" class="btn my-10"
-        >Registrar</b-button
-      >
-      
-    </b-form>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-    <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
-  </b-card>
-  
+        <b-form-group id="input-group-2" label="Telefono:" label-for="input-2">
+          <b-form-input
+            id="input-2"
+            v-model="form.telefono_tienda"
+            placeholder="Ingresar Teléfono"
+            type="number"
+            required
+          ></b-form-input>
+        </b-form-group>
 
-<!-- Tabla con los registros generados luego del registro -->
-<div class="container-fluid col-9">
-    <table class="table">
-    <thead>
-        <tr>
-          <th scope="col">Nombre Tienda</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Email</th>
-          <th scope="col">Tipo Producto</th>
-          <th scope="col">Nombre Producto</th>
-          <th scope="col">Precio Kg</th>
-          <th scope="col">Cambiar/Borrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in productos" :key="item._id" >
-          <td>{{item.nombre_tienda}}</td>
-          <td>{{item.telefono_tienda}}</td>
-          <td>{{item.email_tienda}}</td>
-          <td>{{item.tipo_producto}}</td>
-          <td>{{item.nombre_producto}}</td>
-          <td>{{item.precio_kg}}</td>
-          <td>
-            <b-button @click="eliminarProductos(item._id)"
-            color="error"
-            rounded
-            small>
-            Borrar
-            </b-button>
+        <b-form-group id="input-group-3" label="E-mail:" label-for="input-3">
+          <b-form-input
+            id="input-3"
+            v-model="form.email_tienda"
+            type="email"
+            placeholder="Ingresar email"
+            required
+          ></b-form-input>
+        </b-form-group>
 
-            <b-button 
-            color="error"
-            rounded
-            small>
-            Cambiar
-            </b-button>
-          </td>
-        </tr> 
+        <b-form-group
+          id="input-group-4"
+          label="Tipo Producto:"
+          label-for="input-4"
+        >
+          <b-form-select
+            id="input-4"
+            v-model="form.tipo_producto"
+            :options="tipo_producto"
+            required
+          ></b-form-select>
+        </b-form-group>
+
+        <b-form-group
+          id="input-group-5"
+          label="Nombre Producto:"
+          label-for="input-5"
+        >
+          <b-form-select
+            id="input-5"
+            v-model="form.nombre_producto"
+            :options="nombre_producto"
+            required
+          ></b-form-select>
+        </b-form-group>
+
+        <b-form-group
+          id="input-group-7"
+          label="Precio por Kilo"
+          label-for="input-7"
+        >
+          <b-input-group prepend="$">
+            <b-form-input
+              id="input-7"
+              v-model="form.precio_kg"
+              placeholder="Ingresar precio Kg"
+              type="number"
+              required
+            >
+            </b-form-input>
+          </b-input-group>
+          
+          <b-form-group
+          id="input-group-8"
+          label="Imagen:"
+          label-for="input-8"
+        >
+          <b-form-select
+            id="input-8"
+            v-model="form.url_img"
+            :options="url_img"
+            required
+          ></b-form-select>
+        </b-form-group>
+          
+        </b-form-group>
+
+        <b-button
+          v-on:click="insertarProductos()"
+          variant="success"
+          class="btn my-10"
+          >Registrar</b-button
+        >
+      </b-form>
+    </b-card>
+
+    <!-- Tabla con los registros generados luego del registro -->
+    <div class="container-fluid col-9">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre Tienda</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tipo Producto</th>
+            <th scope="col">Nombre Producto</th>
+            <th scope="col">Precio Kg</th>
+            <th scope="col">Cambiar/Borrar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in productos" :key="item._id">
+            <td>{{ item.nombre_tienda }}</td>
+            <td>{{ item.telefono_tienda }}</td>
+            <td>{{ item.email_tienda }}</td>
+            <td>{{ item.tipo_producto }}</td>
+            <td>{{ item.nombre_producto }}</td>
+            <td>{{ item.precio_kg }}</td>
+            <td>
+              <b-button
+                @click="eliminarProductos(item._id)"
+                color="error"
+                rounded
+                small
+              >
+                Borrar
+              </b-button>
+
+              <b-button color="error" rounded small> Cambiar </b-button>
+            </td>
+          </tr>
         </tbody>
-    </table>
-  </div>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -143,14 +150,15 @@ import store from "../store/index.js";
 export default {
   data() {
     return {
-    form: {
+      form: {
         nombre_tienda: null,
         telefono_tienda: null,
         email_tienda: null,
         tipo_producto: null,
         nombre_producto: null,
         precio_kg: null,
-    },
+        url_image: null,
+      },
       tipo_producto: [
         { text: "Seleccione uno", value: null },
         "Frutas",
@@ -174,12 +182,17 @@ export default {
         "Zanahoria",
         "Naranja",
       ],
+
+      url_img: [
+        { text: "Seleccione uno", value: null },
+        "https://res.cloudinary.com/dgjrfgl2e/image/upload/v1633629061/Tu%20Tienda%20Cercana/PRODUCTOS/AJO_w9zziu.jpg",
+
+      ],
       show: true,
     };
   },
 
   methods: {
-
     eliminarProductos(id) {
       let obj = { id };
       store.dispatch("deleteProductos", obj).then(() => {
@@ -187,39 +200,35 @@ export default {
       });
     },
 
-    insertarProductos(){
+    insertarProductos() {
       let obj = {
-        
-        nombre_tienda: this.nombre_tienda,
-        telefono_tienda: this.telefono_tienda,
-        email_tienda: this.email_tienda,
-        tipo_producto: this.tipo_producto,
-        nombre_producto:this.nombre_producto,
-        precio_kg: this.precio_kg
-        
-        };
-        store.dispatch("insertProductos", obj).then(() => {
+        nombre_tienda: this.form.nombre_tienda,
+        telefono_tienda: this.form.telefono_tienda,
+        email_tienda: this.form.email_tienda,
+        tipo_producto: this.form.tipo_producto,
+        nombre_producto: this.form.nombre_producto,
+        precio_kg: this.form.precio_kg,
+        url_img: this.form.url_img
+      };
+
+      console.log("producto -->", obj);
+      store.dispatch("insertProductos", obj).then(() => {
         store.dispatch("getProductos");
-        });
-      
-      },
-
-      
+      });
     },
-
+  },
 
   created: () => {
     //accede a las acciones del store
-  store.dispatch("getProductos");
+    store.dispatch("getProductos");
   },
 
   computed: {
-    
     productos: () => {
       return store.state.productos;
-    }
-  }
-  };
+    },
+  },
+};
 </script>
 
 <style scoped>
