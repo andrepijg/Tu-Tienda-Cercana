@@ -4,7 +4,7 @@
       <div class="col">
         <div class="card mb-6 mt-20" style="max-width: 100%">
           <div class="row g-0">
-            <div class="card-header">Nuestro Blog Saludable</div>
+            <div class="card-header bg-success">Nuestro Blog Saludable</div>
             <div class="col-md-4">
               <img
                 style="align-rigth"
@@ -25,7 +25,7 @@
                   que pueden limitar la práctica de buenos hábitos de salud si
                   no se tiene la información correcta.
                 </p>
-                <button class="btn">
+                <button class="btn gg-warning rounded">
                   <router-link to="/blog">Leer más...</router-link>
                 </button>
                 <!-- < src="/blog" class="btn" target="_blank">Leer más...</> -->
@@ -39,7 +39,7 @@
       <div class="col">
         <div class="card mb-3" style="max-width: 100%">
           <div class="row g-0">
-            <div class="card-header">Blog Recomendado</div>
+            <div class="card-header bg-success">Blog Recomendado</div>
             <div class="col-md-4">
               <img
                 src="https://res.cloudinary.com/dgjrfgl2e/image/upload/v1633049670/Tu%20Tienda%20Cercana/adelgaza_con_susy_n6jgoa.jpg"
@@ -60,7 +60,7 @@
                   aprender a comer mejor y mantener la nueva rutina para
                   alcanzar el peso deseado.
                 </p>
-                <a href="https://cutt.ly/OEzQBx8" class="btn" target="_blank"
+                <a href="https://cutt.ly/OEzQBx8" class="btn bg-warning rounded" target="_blank"
                   >Adelgaza con Susi</a
                 >
               </div>

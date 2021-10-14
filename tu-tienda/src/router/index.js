@@ -5,6 +5,7 @@ import Blog from '../views/Blog.vue'
 import ProductosInt from '../views/Productos.vue'
 import RegistroProductos from '../views/RegistroProductos.vue'
 import Tiendas from '../views/Tiendas'
+import Login from '../views/Users'
 
 
 Vue.use(VueRouter)
@@ -38,6 +39,12 @@ const routes = [
     path: '/tiendas',
     name: 'tiendas',
     component: Tiendas
+  },
+
+  {
+    path: '/users',
+    name: 'users',
+    component: Login
   },
 
       

@@ -1,35 +1,45 @@
 <template>
-  <div id="cards" class="container-fluid row mt-200px mb-3">
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <b-card
-      deck
-      v-for="item in productos"
-      :key="item._id"
-      no-body
-      style="max-width: 20rem"
-    >
-      <b-card-header>
-        <b-card-img :src="item.url_img" alt="Image" top></b-card-img>
-      </b-card-header>
-      <b-card-body>
-        <b-card-title>{{ item.nombre_producto }}</b-card-title>
-        <b-card-sub-title class="mb-2">{{
-          item.tipo_producto
-        }}</b-card-sub-title>
-      </b-card-body>
+  <div>
+    <br />
+    <br />
+    <h2>PRODUCTOS</h2>
+    <br />
+    <br />
+    <br />
+    <div id="cards" class="container-fluid row mt-200px mb-200px">
+      <b-card
+        deck
+        v-for="item in productos"
+        :key="item._id"
+        no-body
+        style="max-width: 20rem"
+      >
+        <b-card-body>
+          <b-card-img :src="item.url_img" alt="Image" top></b-card-img>
+          <b-card-title>{{ item.nombre_producto }}</b-card-title>
+          <b-card-sub-title class="mb-2">{{
+            item.tipo_producto
+          }}</b-card-sub-title>
+        </b-card-body>
 
-      <b-list-group flush>
-        <b-list-group-item>{{ item.nombre_tienda }}</b-list-group-item>
-        <b-list-group-item>{{ item.telefono_tienda }}</b-list-group-item>
-      </b-list-group>
-      <b-card-body>
-        <h4>$ {{ item.precio_kg }}</h4>
-      </b-card-body>
-    </b-card>
+        <b-list-group flush>
+          <b-list-group-item>{{ item.nombre_tienda }}</b-list-group-item>
+          <b-list-group-item
+            ><b-icon
+              icon="telephone-fill"
+              class="rounded bg-success p-1"
+              variant="light"
+              animation="cylon"
+            >
+            </b-icon
+            ><span></span> {{ item.telefono_tienda }}</b-list-group-item
+          >
+        </b-list-group>
+        <b-card-body>
+          <h4>$ {{ item.precio_kg }}</h4>
+        </b-card-body>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -80,7 +90,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--hueso);
+  width: 200px;
+  height: 50px;
+  background: var(--amarillo);
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
 card {
   margin-top: 250px;
   margin-left: 60px;
@@ -91,7 +114,11 @@ card {
   padding-top: 200px;
 }
 
-#cards .container-fluid  {
+#cards .container-fluid {
   margin: 150px;
+}
+
+.title {
+  background-size: 300px 50px;
 }
 </style>

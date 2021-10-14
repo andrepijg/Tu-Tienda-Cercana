@@ -5,7 +5,7 @@ class ServerRouter{
     constructor(){
         this.router = express.Router();
         this.config();
-    }
+        }
 
     config(){
         const objServerC = new serverController.default();
@@ -15,6 +15,7 @@ class ServerRouter{
         this.router.put("/productos", objServerC.update);
         this.router.delete("/productos", objServerC.deleteUser);        
     }
+    
 }
 
 exports.default = ServerRouter;

@@ -13,16 +13,16 @@
 
                 <h2 class="titulo">Mapa del sitio</h2>
                 <ul>
-                    <a href="">
+                    <a href="/">
                         <li>Inicio</li>
                     </a>
-                    <a href="">
+                    <a href="/productos-lista">
                         <li>Productos</li>
                     </a>
-                    <a href="">
+                    <a href="/tiendas">
                         <li>Tiendas</li>
                     </a>
-                    <a href="">
+                    <a href="/blog">
                         <li>Blog</li>
                     </a>
                 </ul>
@@ -49,6 +49,7 @@
 <script>
 
 </script>
+
 <style>
     :root {
   --hueso: #faf7ee;

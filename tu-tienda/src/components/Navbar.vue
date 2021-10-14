@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container-fluid" style="background: #2f7a2c">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img
             img
             class="d-inline-block align-top"
@@ -72,9 +72,8 @@
               ACCEDER
             </button>
             <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <li><a class="dropdown-item" href="/registro-productos">Ingresar</a></li>
-              <li><a class="dropdown-item" href="#">Registrarse</a></li>
-            </ul>
+              <li><a class="dropdown-item" href="/registro-productos">Registrar Productos</a></li>
+              </ul>
           </div>
         </div>
       </div>
@@ -89,6 +88,7 @@ export default {
 </script>
 
 <style>
+
 nav {
   background-color: #2f7a2c;
 }
@@ -100,4 +100,7 @@ nav {
     width: 150px;
   }
 }
+
 </style>
+
+

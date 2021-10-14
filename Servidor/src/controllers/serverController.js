@@ -1,5 +1,4 @@
-const productos = require ('../models/productos');
-
+const productos = require('../models/productos');
 class ServerController {
     constructor() {
 
@@ -16,10 +15,10 @@ class ServerController {
         });
     }
 
-    
+
     update(req, res) {
-        let { id, nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img} = req.body;
-        let obj = {nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img,}
+        let { id, nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img } = req.body;
+        let obj = { nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img }
         productos.findByIdAndUpdate(id, { $set: obj }, (error, data) => {
             if (error) {
                 res.status(500).send();
@@ -28,7 +27,6 @@ class ServerController {
             }
         })
     }
-
 
     deleteUser(req, res) {
         let { id } = req.body;
@@ -40,7 +38,6 @@ class ServerController {
             }
         })
     }
-
 
     getUsers(req, res) {
         let id = req.params.id;

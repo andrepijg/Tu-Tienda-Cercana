@@ -1,39 +1,46 @@
 <template>
-
-  <div class="container mt-500 mb-400 text-center">
-    <div class="mb-3 mt-500 mb-100">
-      <hr>
-      <hr>
-    <section id="team" >
-      <h2>Tiendas</h2>
-      <section
+  <div id="team" class="mt-200 mb-200">
+    <br>
+    <br>
+    <h2>TIENDAS</h2>
+    <br>
+    <br>
+    <div class="container-fluid col-12 row mt-200px mb-3">
+      <b-card
+        deck
         v-for="item in productos"
         :key="item._id"
-        class="container row col-12"
+        style="max-width:20rem"
+        text-variant="white"
       >
-        <article class="card card-1">
-          <img
+        <b-card-body>
+          <b-img
+            center
             src="https://i.ibb.co/7g6Lh9m/logo-20180910-114107.png"
-            alt="logo-20180910-114107"
-          />
+            alt="image"
+            width="80"
+            class="mb-20"            
+          >
+          </b-img>
 
-          <p>
-            <strong>Nombre: </strong><br>{{ item.nombre_tienda }} 
-          </p>
-          <p>
-            <strong>Teléfono:</strong><br> {{ item.telefono_tienda }} 
-          </p>
-          <p class="ultima">
-            <strong>E-mail: </strong><br> {{ item.email_tienda }} 
-          </p>
-        </article>
-      </section>
-    </section>
-  </div>
+          <b-card-title class="mt-10"
+            ><strong>{{ item.nombre_tienda }}</strong></b-card-title
+          >
+          <b-card-sub-title text-variant="white" class="card-sub mb-2 mt-4"
+            ><p><strong>Teléfono:</strong>{{item.telefono_tienda}}</p></b-card-sub-title
+          >
+          <b-card-sub-title text-varitan="white" class="card-sub mb-2 mt-4"
+            ><p><strong>Email:  </strong>  {{ item.email_tienda }}</p></b-card-sub-title
+          >
+        </b-card-body>
+      </b-card>
+    </div>
   </div>
 </template>
+
 <script>
 import store from "../store/index.js";
+import db from "@/database";
 
 export default {
   data() {
@@ -64,6 +71,10 @@ export default {
         store.dispatch("getProductos");
       });
     },
+    
+    db.productos.aggregate( [
+      {$group:nombre_tienda}
+    ])
   },
 
   created: () => {
@@ -76,124 +87,56 @@ export default {
       return store.state.productos;
     },
   },
+
+  
 };
 </script>
 
 <style scoped>
+
 :root {
   --green: #2f7a2c;
-  --backgroud: #faf7ef;
   --yellow: #f4a94d;
   --letter: #eceeec;
   --hueso: #faf7ee;
-  --verde: #2f7a2c;
-  --amarillo: #ffab49;
-  --gris-oscuro: #444444;
+ 
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------Jorge-estilos-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-h2 {
-  font-size: 1.4rem;
-  background: var(--amarillo);
-  padding: 10px;
-  border-radius: 10px;
+.card {
+  font-family: "Poppins";
+  color: var(--hueso);
+  align-content: center;
+  background-color: #2f7a2c;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 6px 21px -1px #000000;
+  border: none;
 }
 
-#team h2 {
+.card-body p {
+  background-color: var(--green);
+  padding: 10px;
+  font-family: "Krub";
+  color: var(--hueso);
+  text-align: justify;
+}
+
+h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
   text-align: center;
   color: var(--hueso);
   width: 200px;
   height: 50px;
-
   background: var(--amarillo);
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 20px;
 }
 
-#team {
-  width: 100%;
-  min-width: 320px;
-}
 
-#team .container {
-  display: flex;
-  flex-wrap: inherit;
-  justify-content: center;
-  position: relative;
-  flex-direction: row;
-}
-
-#team .container .card {
-  width: 300px;
-  height: 370px;
-  margin: 20px;
-  display: grid;
-  grid-template-columns: 100%;
-  box-shadow: 1px 6px 21px -1px #000000;
-  position: relative;
-  border-radius: 10px;
-  background: var(--green);
-}
-
-#team .container .card img {
-  width: 80px;
-  height:80px;
-  border-radius: 20px;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  background-color: var(--green);
-  
-}
-
-#team .container .card p {
-  color: var(--letter);
-  background: var(--green);
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* font-size: 2rem; */
-}
-
-.card a {
-  justify-self: center;
-  align-self: center;
-}
-
-.card p {
-  color: var(--letter);
-  font-weight: 600;
-  font-size: 20px;
-  background: var(--green);
-}
-
-.card p strong {
-  background: var(--green);
-  color: var(--letter);
-}
-
-.card a button {
-  text-decoration: none;
-  font-size: 20px;
-  color: var(--letter);
-  background: var(--yellow);
-  border-radius: 30px;
-  width: 200px;
-  height: 40px;
-  justify-self: center;
-  align-self: center;
-  border: none;
-  left: 45px;
-  top: 320px;
-  position: absolute;
-  transition: transform 0.2s;
-}
-
-.card a button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
 </style>

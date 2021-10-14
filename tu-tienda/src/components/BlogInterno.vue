@@ -1,54 +1,150 @@
 <template>
   <div>
+    <br>
+    <br>
+    <br>
     <div class="cabezote">
       <h2 class="titulo">Nuestro Blog Saludable</h2>
     </div>
 
-    <div class="contenedor">
-      <p>
-        Muchos creemos que llevar una vida saludable, una dieta sana y una
-        rutina de ejercicios es cada vez más difícil con lo demandante que se ha
-        vuelto nuestra sociedad. Las largas jornadas laborales, el estrés del
-        tráfico, las actividades diarias, la familia y muchos otros aspectos más
-        son factores que pueden limitar la práctica de buenos hábitos de salud
-        si no se tiene la información correcta.
-      </p>
-      <p>
-        Sin embargo, y gracias a Internet tenemos el poder de la información a
-        nuestro alcance y queda a nuestro criterio sacarle el mayor provecho
-        posible. Por ello, si te has planteado el objetivo de mejorar tu salud y
-        conseguir un estilo de vida más saludable, pero no sabes por dónde
-        empezar, te recomendamos revisar nuestra lista con los mejores consejos
-        sobre este importante tema.
-      </p>
-      <p>
-        En virtud de la gran cantidad de sitios en los que puedes obtener
-        información, muchas veces errada o sin fundamentos médicos, hemos hecho
-        una investigación previa sobre los blogs elegidos y sus autores para
-        verificar que sus contenidos son acertados y que la información que
-        ofrecen te ayudará a mejorar tu salud a partir de una dieta equilibrada,
-        mejores hábitos y una rutina de ejercicios acorde a tus necesidades.
-      </p>
-      <p>
-        En este blog encontrarás información diversa sobre un gran número de
-        temas, además de recomendaciones sobre diferentes aspectos relacionados
-        con la salud. Si quieres comenzar a alimentarte de una manera más
-        saludable, podrás encontrar recetas cocinadas con la plancha de asar o
-        con la vaporera de silicona, y también averiguarás más sobre el complejo
-        vitamínico y sus beneficios, así como el zumo de aloe vera, por ejemplo.
-        Si deseas empezar a hacer deporte, debes saber que del mismo modo existe
-        una gran cantidad de artículos sobre correr, trotar, nadar, así como
-        datos sobre artículos que podrías adquirir, como un reloj running o un
-        podómetro.
-      </p>
-      <p>
-        Tener este blog como referencia te permitirá ser constante en tu
-        determinación por alcanzar una mejor calidad de vida al conocer los
-        tipos de alimentos que debes consumir, qué ejercicios puedes realizar a
-        diario sin alterar el ritmo de tus actividades diarias e ir cambiando
-        poco a poco los hábitos de tu familia
-      </p>
-    </div>
+    <b-container>
+      <h1>Cómo almacenar las frutas y verduras</h1>
+      <div>
+        <div>
+          <h6>Posted in Saludable by Tu Tienda Cercana.com</h6>
+          <b-card-group deck>
+            <b-card
+              img-src="https://i.ibb.co/TwgYcmw/12-Consejos.png"
+              alt="12-Consejos"
+            >
+              <b-card-text>
+                En estos tiempos, conservar adecuadamente los alimentos es
+                importante para evitar enfermedades, intoxicaciones, evitar el
+                desperdicio de comida y ahorrar dinero. En La Vaquita,
+                conversamos con un grupo de Ingenieros en Alimentos, quienes nos
+                comparten estos 12 consejos para preservar las frutas, verduras
+                y carnes de la forma adecuada.
+              </b-card-text>
+            </b-card>
+            <br />
+
+            <b-card
+              img-src="https://i.ibb.co/KjZcd6h/Imagen1.png"
+              alt="Imagen1"
+              img-left
+              class="mb-3"
+            >
+              <b-card-text>
+                <h6>Tips para almacenar alimentos correctamente:</h6>
+                <li>
+                  Lava y desinfecta muy bien los alimentos perecederos como
+                  frutas y vegetales, usando 500 ml de agua potable + 125 ml de
+                  vinagre. Este te ayudará a eliminar las bacterias y cualquier
+                  otro contaminante, debido a su grado de acidez. Si no tienes
+                  vinagre, puedes reemplazarlo por limón. Debes remojar frutas y
+                  verduras durante 10 minutos.
+                </li>
+                <li>
+                  Cuando estés comprando tus productos, revisa muy bien las
+                  fechas de vencimiento de los alimentos, elige los que tengan
+                  fechas de vencimiento más lejanas.
+                </li>
+                <li>
+                  Cuando vayas a preparar tus comidas, procura gastar primero
+                  los alimentos que están más pronto a vencer.
+                </li>
+                <li>
+                  Compra alimentos enlatados y en conservas, ya que tienen mayor
+                  vida útil, y pueden ser utilizados para aquellos posibles
+                  momentos en los cuales no podamos salir a los supermercados.
+                </li>
+                <li>
+                  Para evitar ocasionar contaminación cruzada en tu refrigerador
+                  o nevera, usa recipientes plásticos para guardar tus carnes.
+                  Nunca pongas en un mismo recipiente carne de res, con carne de
+                  cerdo y/o carnes de aves; todo debe estar separado.
+                </li>
+              </b-card-text>
+            </b-card>
+          </b-card-group>
+        </div>
+        <div class="mt-4">
+          <br />
+          <br />
+          <div>
+            <h4>Contaminación cruzada</h4>
+            <p>
+              la contaminación cruzada, se da cuando dos alimentos de diferente
+              naturaleza se contaminan, esto sucede al tener en una misma parte
+              o recipiente carnes frescas con carnes cocidas. También puede ser
+              ocasionarse cuando cortas las verduras con el mismo cuchillo con
+              el cual cortaste la carne, sin haberlo lavado y desinfectado
+              previamente. Cada alimento tiene microorganismos diferentes que se
+              transmiten de uno a otro.
+              <br />
+              En el caso del almacenamiento en la nevera se recomienda separar
+              alimentos crudos o frescos de los alimentos cocidos. También es
+              importante separar la carne de cerdo de la de res para evitar la
+              contaminación cruzada, aunque son carnes, las dos tienen
+              microbiología diferente.
+            </p>
+            <li>
+              Para alargar la vida útil de la carne de res, puedes usar el
+              método de salado, y así te durará más. Recuerda que para personas
+              hipertensas y con otras afectaciones, no se recomienda el consumo
+              de alimentos con alto contenido de sal.
+            </li>
+          </div>
+
+          <b-card
+            img-src="https://i.ibb.co/2NFFLbJ/Imagen2.png"
+            alt="Imagen2"
+            img-alt="Card image"
+          >
+            <b-card-text>
+              <li>
+                Compra frutas frescas, despúlpalas, guárdalas en recipientes
+                plásticos o de vidrio que estén muy limpios y congela para mayor
+                conservación.
+              </li>
+              <li>
+                Si consumes huevos, procura lavarlos y desinfectarlos con agua
+                potable y vinagre, antes de su preparación y consumo.
+              </li>
+              <li>
+                Cocina los alimentos por encima de los 75°C, para reducir la
+                carga microbiana.
+              </li>
+              <li>
+                ¡Que no te falten los granos! los frijoles, las lentejas y los
+                garbanzos son gran fuente de proteína vegetal y pueden sustituir
+                las carnes (res, pollo y cerdo) en momentos de escasez.
+              </li>
+              <li>
+                Lava los utensilios como cuchillos y tablas de picar, cada vez
+                que vayas a cortar, pelar, picar alimentos diferentes.
+              </li>
+              <li>
+                No prepares más alimentos de lo que normalmente consumes, para
+                no generar desperdicios. Es muy importante que laves tus manos
+                frecuentemente durante la preparación de los alimentos.
+              </li>
+            </b-card-text>
+          </b-card>
+          <br />
+          <br />
+
+          <div>
+            <b-img
+              center
+              src="https://i.ibb.co/8MJs830/imagen3.jpg"
+              alt="imagen3"
+            >
+            </b-img>
+          </div>
+        </div>
+      </div>
+    </b-container>
   </div>
 </template>
 
@@ -64,6 +160,12 @@
   --gris-oscuro: #444444;
   font-family: "Poppins" "Krub";
 }
+
+.titulo{
+  font-family: 'Poppins';
+  color:var(--letter)
+
+}
 .cabezote {
   background-image: url(https://res.cloudinary.com/dgjrfgl2e/image/upload/v1633058269/Tu%20Tienda%20Cercana/imagen-blog_pk3fxj.jpg);
   position: relative;
@@ -77,13 +179,8 @@
 .cabezote h2 {
   text-align: center;
   font-size: 2rem;
-  font-weight: 700;
-  background: var(--green);
-  color: var(--hueso);
-  width:100%;
-  height: 80px;
-  align-content: center;
-  justify-content: center;
+  font-weight: 800;
+  background: var(--green)
   
 }
 </style>

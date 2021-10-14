@@ -77,27 +77,37 @@
             >
             </b-form-input>
           </b-input-group>
-          
-          <b-form-group
-          id="input-group-8"
-          label="Imagen:"
-          label-for="input-8"
-        >
-          <b-form-select
-            id="input-8"
-            v-model="form.url_img"
-            :options="url_img"
-            required
-          ></b-form-select>
+
+          <b-form-group id="input-group-8" label="Imagen:" label-for="input-8">
+            <b-form-select
+              id="input-8"
+              v-model="form.url_img"
+              :options="url_img"
+              required
+            ></b-form-select>
+          </b-form-group>
         </b-form-group>
-        </b-form-group>
-          
-          <b-button
+
+        <b-button
+          v-if="id == null"
           v-on:click="insertarProductos()"
           variant="success"
           class="btn my-10"
           >Registrar</b-button
         >
+        <b-button
+          v-if="id !== null"
+          v-on:click="actualizarProductos(id)"
+          variant="primary"
+          class="btn my-10"
+          >Actualizar</b-button
+        >
+
+        <b-button 
+        type="reset" 
+        variant="danger">
+        Limpiar</b-button>
+        
       </b-form>
     </b-card>
 
@@ -133,7 +143,24 @@
                 Borrar
               </b-button>
 
-              <b-button variant="primary" rounded small> Cambiar </b-button>
+              <b-button
+                @click="
+                  btnActualizar(
+                    item._id,
+                    item.nombre_tienda,
+                    item.telefono_tienda,
+                    item.email_tienda,
+                    item.tipo_producto,
+                    item.nombre_producto,
+                    item.precio_kg,
+                    item.url_img
+                  )"
+                variant="primary"
+                rounded
+                small
+              >
+                Cambiar
+              </b-button>
             </td>
           </tr>
         </tbody>
@@ -198,8 +225,8 @@ export default {
         "https://bit.ly/Piña_",
         "https://bit.ly/Sobrebarriga_",
         "https://bit.ly/Tomate_Tomate",
-        "https://bit.ly/Zanahoria_",        
-            ],
+        "https://bit.ly/Zanahoria_",
+      ],
       show: true,
     };
   },
@@ -227,7 +254,61 @@ export default {
       store.dispatch("insertProductos", obj).then(() => {
         store.dispatch("getProductos");
       });
+      this.form.nombre_tienda = "";
+      this.form.telefono_tienda = "";
+      this.form.email_tienda = "";
+      this.form.tipo_producto = null;
+      this.form.nombre_producto = null;
+      this.form.precio_kg = "";
+      this.form.url_img = null;
+
     },
+
+    actualizarProductos(id) {
+      let obj = {
+        id: id,
+        nombre_tienda: this.form.nombre_tienda,
+        telefono_tienda: this.form.telefono_tienda,
+        email_tienda: this.form.email_tienda,
+        tipo_producto: this.form.tipo_producto,
+        nombre_producto: this.form.nombre_producto,
+        precio_kg: this.form.precio_kg,
+        url_img: this.form.url_img,
+      };
+      store.dispatch("updateProductos", obj).then(() => {
+        store.dispatch("getProductos");
+        this.id = null; //volver id nulo
+      });
+    },
+
+    btnActualizar(id, nombre_tienda, telefono_tienda, email_tienda, tipo_producto, nombre_producto, precio_kg, url_img) {
+      this.id = id;
+      this.form.nombre_tienda = nombre_tienda;
+      this.form.telefono_tienda = telefono_tienda;
+      this.form.email_tienda = email_tienda;
+      this.form.tipo_producto = tipo_producto;
+      this.form.nombre_producto = nombre_producto;
+      this.form.precio_kg = precio_kg;
+      this.form.url_img = url_img;
+    },
+
+  onReset(event) {
+        event.preventDefault()
+        // Reset our form values
+        this.id = id;
+      this.form.nombre_tienda = "";
+      this.form.telefono_tienda = "";
+      this.form.email_tienda = "";
+      this.form.tipo_producto = null;
+      this.form.nombre_producto = null;
+      this.form.precio_kg = "";
+      this.form.url_img = null;
+        // Trick to reset/clear native browser form validation state
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
+      }
   },
 
   created: () => {

@@ -1,6 +1,6 @@
 <template>
     <div>
-    <b-form @submit.prevent="buscarUsuario()" @reset="onReset" v-if="show">
+    <b-form @submit.prevent="buscarUsuario()" v-if="show">
         
       <b-form-group
         id="input-group-1"
@@ -39,6 +39,7 @@
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
+    </div>
 </template>
 
 <script>

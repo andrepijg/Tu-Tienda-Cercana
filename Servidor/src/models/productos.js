@@ -17,6 +17,8 @@ var productoSchema = new Schema({
 
 });
 
+
+
 //Convertir a Modelo
 
 module.exports = mongoose.model('Productos', productoSchema);
